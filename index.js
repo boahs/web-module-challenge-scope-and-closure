@@ -92,6 +92,7 @@ function finalScore(inning, currentInning) {
   }
   return scores;
 }
+finalScore(inning, 4);
 
 /* Task 4: 
 
@@ -113,6 +114,30 @@ and returns the score at each pont in the game, like so:
 9th inning: awayTeam - homeTeam
 Final Score: awayTeam - homeTeam */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(inning, currentInning) {
+  const scores = {
+    Home: 0,
+    Away: 0,
+  };
+  const allInnings = [
+    "1st",
+    "2nd",
+    "3rd",
+    "4th",
+    "5th",
+    "6th",
+    "7th",
+    "8th",
+    "9th",
+  ];
+  for (let i = 0; i < currentInning; i++) {
+    scores.Home += inning();
+    scores.Away += inning();
+    console.log(`${allInnings[i]} inning: ${scores.Home} - ${scores.Away}`);
+    if (i === currentInning - 1) {
+      console.log(`Final score: ${scores.Home} - ${scores.Away}`);
+    }
+  }
+  return scores;
 }
+scoreboard(inning, 4);
