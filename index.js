@@ -80,7 +80,10 @@ finalScore(inning, 9) might return:
 
 */
 
-function finalScore(callback) {}
+function finalScore(num) {
+  const score = 0;
+  return `Number of innings remaining : ${inning()};
+}
 
 /* Task 4: 
 
