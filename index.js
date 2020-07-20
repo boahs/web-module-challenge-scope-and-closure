@@ -64,7 +64,7 @@ Write a function called `inning` that returns a random number of points that a t
 function inning() {
   return Math.floor(Math.random() * Math.floor(3));
 }
-
+inning();
 /* Task 3: finalScore()
 
 Write a higher order function called `finalScore` that accepts the callback function `inning` (from above) and a number 
@@ -80,9 +80,17 @@ finalScore(inning, 9) might return:
 
 */
 
-function finalScore(num) {
-  const score = 0;
-  return `Number of innings remaining : ${inning()};
+function finalScore(inning, currentInning) {
+  const scores = {
+    Home: 0,
+    Away: 0,
+  };
+
+  for (let i = 0; i < currentInning; i++) {
+    scores.Home += inning();
+    scores.Away += inning();
+  }
+  return scores;
 }
 
 /* Task 4: 
